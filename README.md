@@ -4,7 +4,7 @@ A collection of JavaScript files to solve bomb module from Keep Talking and Nobo
 
 
 
-At some point, when browsers finally implement their Web Speech API, this project will accept speech commands and speak solutions to the modules. In most cases, `<Module>.solve()` input parameters equate to voice input, and `console.log()` calls equate to voice output.
+At some point, [when browsers finally implement their Web Speech API](https://platform-status.mozilla.org/#webspeech-recognition), this project will accept speech commands and speak solutions to the modules. In most cases, `<Module>.solve()` input parameters equate to voice input, and `console.log()` calls equate to voice output.
 
 
 
@@ -18,7 +18,6 @@ In order to solve some modules, information about the bomb is required:
 - If the bomb has a FRK lit indicator;
 - If the bomb has a parallel port;
 - How many batteries the bomb has.
-- 
 
 The method `Bomb.bomb_check()` will return an instance of the bomb object. This would be where the user would speak the information about the bomb.
 
@@ -102,7 +101,6 @@ Button.solve("red", "detonate", bomb)
 ##### Description
 
 The Keypad module contains 4 weirdly-shaped symbols which needs to be pressed in the right order.
-
 
 
 ##### Input
