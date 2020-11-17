@@ -4,7 +4,7 @@ A collection of JavaScript files to solve bomb module from [Keep Talking and Nob
 
 
 
-At some point, when browsers finally implement their Web Speech API, this project will accept speech commands and speak solutions to the modules. In most cases, `<Module>.solve()` input parameters equate to voice input, and `console.log()` calls equate to voice output. In examples, a hash (#) equates to the user input.
+At some point, [when browsers finally implement their Web Speech API](https://platform-status.mozilla.org/#webspeech-recognition), this project will accept speech commands and speak solutions to the modules. In most cases, `<Module>.solve()` input parameters equate to voice input, and `console.log()` calls equate to voice output. In examples, a hash (#) equates to the user input.
 
 
 
@@ -18,6 +18,7 @@ At some point, when browsers finally implement their Web Speech API, this projec
 - **Expert** - the person/people which has sole access to the Bomb Defusal Manual.
 - **"bomb check"** - the process of gathering information about the bomb.
 - **"display number" or "display letter"** - the big number/letter at the top of some modules.
+
 
 
 
@@ -134,7 +135,6 @@ Button.solve("blue", "abort", bomb)
 ##### Description
 
 The Keypad module contains 4 symbols which must be pressed in the right order.
-
 
 
 ##### Input
