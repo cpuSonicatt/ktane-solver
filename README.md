@@ -315,23 +315,38 @@ Complicated.solve("white star, red star, red star, blue star, blue light star, r
 
 
 
-### Maze (work in progress)
+### Maze
 
 **Description**
 
 The Maze module contains a maze with invisible walls, white light that the Defuser controls, a red triangle that the white light must get to, and two green circles.
 
-(this module sucks, i hate it, my brain can't deal with 2D arrays lol)
+This module uses [a modified version of this maze algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
 
 ##### Input
 
-_work in progress_
+- `ind: Array` - an Array of the position of either green indicator.
+- `start: Array` - an Array of the position of the white light.
+- `end: Array` - an Array of the position of the red triangle.
+
+Each position counts from 0. The position is down first, then across.
 
 
 
 ##### Example
 
-_work in progress_
+```js
+const Maze = require("./module_solutions/maze/maze.js")
+
+// down first, then along
+Maze.solve([0,1], [2,2], [0,1])
+```
+
+```shell
+>> [ 'DOWN', 'RIGHT', 'RIGHT', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'LEFT', 'UP', 'LEFT', 'LEFT' ]
+```
+
+
 
 
 
