@@ -1,6 +1,6 @@
 # KTaNE Bomb Expert
 
-A collection of JavaScript files to solve bomb module from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
+A collection of JavaScript files to solve bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
 
@@ -74,8 +74,6 @@ Wires.solve("red blue blue", bomb)
 
 
 
-
-
  ### Button
 
 ##### Description
@@ -96,7 +94,7 @@ This module contains a mocked user input. In this case, it is the colour of the 
 
 **Examples**
 
-<u>Press and release example.</u>
+Press and release example.
 
 ```javascript
 const Button = require("./module_solutions/button.js")
@@ -112,7 +110,7 @@ Button.solve("red", "detonate", bomb)
 
 
 
-<u>Press and hold example.</u>
+Press and hold example.
 
 ```js
 const Button = require("./module_solutions/button.js")
