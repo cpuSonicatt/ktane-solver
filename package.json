@@ -3,9 +3,6 @@
   "version": "1.0.1",
   "description": "A library made to solve KTaNE modules",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
