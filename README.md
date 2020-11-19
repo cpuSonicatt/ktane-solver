@@ -1,6 +1,6 @@
 # KTaNE Bomb Expert
 
-A collection of JavaScript files to solve bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
+A collection of JavaScript files to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
 
@@ -61,7 +61,8 @@ The Wires module contains between 3 and 6 wires coloured red, blue, yellow, whit
 ##### Example
 
 ```javascript
-const Wires = require("./module_solutions/wire.js")
+const Bomb = require("./bomb.js")
+const Wires = require("./module_solutions/wire/wire.js")
 
 let bomb = Bomb.bomb_check()
 
@@ -82,6 +83,8 @@ The Button module has a colour and text which determines when the button should 
 
 This module contains a mocked user input. In this case, it is the colour of the strip after holding the button.
 
+
+
 ##### Input
 
 - `colour: String` - the colour of the button.
@@ -97,11 +100,12 @@ This module contains a mocked user input. In this case, it is the colour of the 
 Press and release example.
 
 ```javascript
-const Button = require("./module_solutions/button.js")
+const Bomb = require("./bomb.js")
+const Button = require("./module_solutions/button/button.js")
 
 let bomb = Bomb.bomb_check()
 
-Button.solve("red", "detonate", bomb)
+Button.solve("red detonate", bomb)
 ```
 
 ```shell
@@ -113,11 +117,12 @@ Button.solve("red", "detonate", bomb)
 Press and hold example.
 
 ```js
-const Button = require("./module_solutions/button.js")
+const Bomb = require("./bomb.js")
+const Button = require("./module_solutions/button/button.js")
 
 let bomb = Bomb.bomb_check()
 
-Button.solve("blue", "abort", bomb)
+Button.solve("blue abort", bomb)
 ```
 
 ```shell
@@ -135,6 +140,8 @@ Button.solve("blue", "abort", bomb)
 The Keypad module contains 4 symbols which must be pressed in the right order.
 
 
+
+
 ##### Input
  - `symbols: String` - a String with each symbol description, delimited by a comma and a space.
 
@@ -143,7 +150,7 @@ The Keypad module contains 4 symbols which must be pressed in the right order.
 
 ##### Example
 ```javascript
-const Keypad = require("./module_solutions/keypad.js")
+const Keypad = require("./module_solutions/keypad/keypad.js")
 
 Keypad.solve("cat, curly h, at, backwards c")
 ```
@@ -172,7 +179,8 @@ The Simon Says module contains 4 coloured buttons (red, blue, yellow, and green)
 ##### Example
 
 ```js
-const SimonSays = require("./module_solutions/simonsays.js")
+const Bomb = require("./bomb.js")
+const SimonSays = require("./module_solutions/simonsays/simonsays.js")
 
 let bomb = Bomb.bomb_check()
 
@@ -193,6 +201,8 @@ The Who's On First module contains 6 labelled buttons; one of which should be pr
 
 This module contains a mocked user input. In this case, it is the word based on the position as requested by the Expert.
 
+
+
 ##### Input
 
 - `word: String` - the display word.
@@ -202,7 +212,7 @@ This module contains a mocked user input. In this case, it is the word based on 
 ##### Example
 
 ```js
-const WhosOnFirst = require("./module_solutions/whosonfirst.js")
+const WhosOnFirst = require("./module_solutions/whosonfirst/whosonfirst.js")
 
 WhosOnFirst.solve("says")
 ```
@@ -223,6 +233,8 @@ The Memory module contains 4 labelled buttons; one of which should be pressed de
 
 This module requires continuous calls in order to function properly, as information from previous stages are required to solve this module.
 
+
+
 ##### Input
 
 - `numbers: String` -  a String of the numbers, starting with the display number, and numbers below, in order from left-to-right.
@@ -233,7 +245,8 @@ This module requires continuous calls in order to function properly, as informat
 ##### Example
 
 ```js
-const Memory = require("./module_solutions/memory.js")
+const Bomb = require("./bomb.js")
+const Memory = require("./module_solutions/memory/memory.js")
 
 let bomb = Bomb.bomb_check()
 
@@ -271,7 +284,7 @@ The Morse Code module contains a blinking light which spells a word in [Morse Co
 ##### Example
 
 ```js
-const Morse = require("./module_solutions/morse.js")
+const Morse = require("./module_solutions/morse/morse.js")
 
 Morse.solve("dot dot dot, dot dot dot dot, dot, dot dash dot dot, dot dash dot dot")
 ```
@@ -300,7 +313,8 @@ The Complicated Wires module contains 6 wires with 3 different attributes (colou
 ##### Example
 
 ```js
-const Complicated = require("./module_solutions/complicated.js")
+const Bomb = require("./bomb.js")
+const Complicated = require("./module_solutions/complicated/complicated.js")
 
 let bomb = Bomb.bomb_check()
 
@@ -313,23 +327,21 @@ Complicated.solve("white star, red star, red star, blue star, blue light star, r
 
 
 
-
-
 ### Maze
 
 **Description**
 
-The Maze module contains a maze with invisible walls, white light that the Defuser controls, a red triangle that the white light must get to, and two green circles.
+The Maze module contains a maze with invisible walls, white light that the Defuser controls, a red triangle that the white light must get to, and two green circles. Each position counts from 0. The position is down first, then across.
 
 This module uses [a modified version of this maze algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
+
+
 
 ##### Input
 
 - `ind: Array` - an Array of the position of either green indicator.
 - `start: Array` - an Array of the position of the white light.
 - `end: Array` - an Array of the position of the red triangle.
-
-Each position counts from 0. The position is down first, then across.
 
 
 
@@ -345,8 +357,6 @@ Maze.solve([0,1], [2,2], [0,1])
 ```shell
 >> [ 'DOWN', 'RIGHT', 'RIGHT', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'LEFT', 'UP', 'LEFT', 'LEFT' ]
 ```
-
-
 
 
 
@@ -370,7 +380,8 @@ This module requires continuous calls in order to function properly, as informat
 **Example**
 
 ```js
-const Sequence = require("./module_solutions/sequence.js")
+const Bomb = require("./bomb.js")
+const Sequence = require("./module_solutions/sequence/sequence.js")
 
 let bomb = Bomb.bomb_check()
 
@@ -406,7 +417,7 @@ The Password module contains a row of 5 letters; each letter can be cycled throu
 ##### Example
 
 ```js
-const Password = require("./module_solutions/password.js")
+const Password = require("./module_solutions/password/password.js")
 
 Password.solve("kqtfhy, hwjfus, rinybk, ynukj, ipkxvc")
 ```
@@ -414,8 +425,6 @@ Password.solve("kqtfhy, hwjfus, rinybk, ynukj, ipkxvc")
 ```shell
 >> think
 ```
-
-
 
 
 
@@ -442,7 +451,7 @@ The Knob module contains a knob, and 12 lights which dictates which direction th
 ##### Example
 
 ```js
-const Knob = require("./module_solutions/knob.js")
+const Knob = require("./module_solutions/knob/knob.js")
 
 Knob.solve("101100111010")
 ```
@@ -450,15 +459,3 @@ Knob.solve("101100111010")
 ```shell
 >> Right
 ```
-
-
-
-
-
-todo:
-
-- two images/GIFs of each module for the example
-  - before solving
-  - after solving
-
-- images for any graphical modules (Keypad for example)
