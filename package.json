@@ -1,0 +1,27 @@
+{
+  "name": "ktane-solver",
+  "version": "1.0.1",
+  "description": "A library made to solve KTaNE modules",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpuSonicatt/KTaNE-Bomb-Expert.git"
+  },
+  "keywords": [
+    "ktane",
+    "bomb",
+    "solver"
+  ],
+  "author": "cpuSonicatt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpuSonicatt/KTaNE-Bomb-Expert/issues"
+  },
+  "homepage": "https://github.com/cpuSonicatt/KTaNE-Bomb-Expert#readme"
+}
