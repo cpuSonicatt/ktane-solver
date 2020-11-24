@@ -1,10 +1,12 @@
-# KTaNE Bomb Expert
+# ktane-solver
 
-A collection of JavaScript files to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
+A JavaScript library to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
 
-At some point, [when browsers finally implement their Web Speech API](https://platform-status.mozilla.org/#webspeech-recognition), this project will accept speech commands and speak solutions to the modules. In most cases, `<Module>.solve()` input parameters equate to voice input, and `console.log()` calls equate to voice output. In examples, a hash (#) equates to the user input.
+## Installing
+
+`npm i ktane-solver`
 
 
 
@@ -22,440 +24,543 @@ At some point, [when browsers finally implement their Web Speech API](https://pl
 
 
 
-## Bomb
+## The Bomb object
 
-In order to solve some modules, information about the bomb is required:
+Some modules require information about the bomb in order to solve.
 
-- The last digit in the serial code.
-- If the serial code has a vowel.
-- If the bomb has a CAR lit indicator.
-- If the bomb has a FRK lit indicator.
-- If the bomb has a parallel port.
-- How many batteries the bomb has.
+- `digit: int` - the last digit of the serial code.
+- `vowel: boolean` - if the serial code contains a vowel.
+- `car: boolean` - if the bomb has a CAR lit indicator.
+- `frk: boolean` - if the bomb has a FRK lit indicator.
+- `pport: boolean` - if the bomb has a parallel port.
+- `batteries: int` - the amount of batteries on the bomb.
 
-The method `Bomb.bomb_check()` will return an instance of the bomb object. This would be where the user would speak the information about the bomb.
 
 
+**Methods**
 
-## Modules
+- `add_strike()` - Add a strike to the bomb.
 
-Each module has a `<Module>.solve()` method which displays the solution to the module to the console (for now). More information about the modules, as well as how to solve them, can be found at the [Bomb Defusal Manual](https://www.bombmanual.com/)
-
-
-
-### Wires
-
-##### Description
-
-The Wires module contains between 3 and 6 wires coloured red, blue, yellow, white, or black. One wire must be cut in order to solve the module.
-
-
-
-##### Input
-
-- `wires: String` - a String with each wire colour, delimited by a space.
-- `bomb: Object` - an instance of the bomb object.
-
-
-
-##### Example
-
-```javascript
-const Bomb = require("./bomb.js")
-const Wires = require("./module_solutions/wire/wire.js")
-
-let bomb = Bomb.bomb_check()
-
-Wires.solve("red blue blue", bomb)
-```
-
-```shell
->> Cut 3rd
-```
-
-
-
- ### Button
-
-##### Description
-
-The Button module has a colour and text which determines when the button should be released.
-
-This module contains a mocked user input. In this case, it is the colour of the strip after holding the button.
-
-
-
-##### Input
-
-- `colour: String` - the colour of the button.
-
-- `text: String` - the text written on the button.
-
-- `bomb: Object` - an instance of the bomb object.
-
-  
-
-**Examples**
-
-Press and release example.
-
-```javascript
-const Bomb = require("./bomb.js")
-const Button = require("./module_solutions/button/button.js")
-
-let bomb = Bomb.bomb_check()
-
-Button.solve("red detonate", bomb)
-```
-
-```shell
->> Press and release
-```
-
-
-
-Press and hold example.
-
-```js
-const Bomb = require("./bomb.js")
-const Button = require("./module_solutions/button/button.js")
-
-let bomb = Bomb.bomb_check()
-
-Button.solve("blue abort", bomb)
-```
-
-```shell
->> Press and hold
-#blue
->> 4 in any position
-```
-
-
-
-### Keypad
-
-##### Description
-
-The Keypad module contains 4 symbols which must be pressed in the right order.
-
-
-
-
-##### Input
- - `symbols: String` - a String with each symbol description, delimited by a comma and a space.
-
-
-
-
-##### Example
-```javascript
-const Keypad = require("./module_solutions/keypad/keypad.js")
-
-Keypad.solve("cat, curly h, at, backwards c")
-```
-
-```shell
->> at, cat, curly h, backwards c
-```
-
-
-
-### Simon Says
-
-##### Description
-
-The Simon Says module contains 4 coloured buttons (red, blue, yellow, and green) which must be pressed given the correct colour mapping.
-
-
-
-##### Input
-
-- `colours: String`  - a String with each colour, delimited by a space.
-- `bomb: Object` - an instance of the bomb object.
-
-
-
-##### Example
-
-```js
-const Bomb = require("./bomb.js")
-const SimonSays = require("./module_solutions/simonsays/simonsays.js")
-
-let bomb = Bomb.bomb_check()
-
-SimonSays.solve("red red blue", bomb)
-```
-
-```shell
->> blue blue red
-```
-
-
-
-### Who's On First
-
-**Description**
-
-The Who's On First module contains 6 labelled buttons; one of which should be pressed depending on both the top display word, and the label of one of the 6 buttons.
-
-This module contains a mocked user input. In this case, it is the word based on the position as requested by the Expert.
-
-
-
-##### Input
-
-- `word: String` - the display word.
-
-
-
-##### Example
-
-```js
-const WhosOnFirst = require("./module_solutions/whosonfirst/whosonfirst.js")
-
-WhosOnFirst.solve("says")
-```
-
-```shell
->> Bottom right
-#right
->> YES, NOTHING, READY, PRESS, NO, WAIT, WHAT, RIGHT, MIDDLE, LEFT, UHHH, BLANK, OKAY, FIRST
-```
-
-
-
-### Memory
-
-**Description**
-
-The Memory module contains 4 labelled buttons; one of which should be pressed depending on both the top display number, and the position or label from previous stages.
-
-This module requires continuous calls in order to function properly, as information from previous stages are required to solve this module.
-
-
-
-##### Input
-
-- `numbers: String` -  a String of the numbers, starting with the display number, and numbers below, in order from left-to-right.
-- `bomb: Object` - an instance of the bomb object.
-
-
-
-##### Example
-
-```js
-const Bomb = require("./bomb.js")
-const Memory = require("./module_solutions/memory/memory.js")
-
-let bomb = Bomb.bomb_check()
-
-Memory.solve("41342", bomb)
-Memory.solve("33124", bomb)
-Memory.solve("43124", bomb)
-Memory.solve("22413", bomb)
-Memory.solve("22413", bomb)
-```
-
-```shell
->> Press 2
->> Press 3
->> Press 4
->> Press 2
->> Press 3
-```
-
-
-
-### Morse Code
-
-**Description**
-
-The Morse Code module contains a blinking light which spells a word in [Morse Code](https://en.wikipedia.org/wiki/Morse_code), which translates to a frequency.
-
-
-
-##### Input
-
-- `morse: String` -  a String of Morse Code characters, delimited by a comma and a space.
-
-
-
-##### Example
-
-```js
-const Morse = require("./module_solutions/morse/morse.js")
-
-Morse.solve("dot dot dot, dot dot dot dot, dot, dot dash dot dot, dot dash dot dot")
-```
-
-```shell
->> 3.505 MHz
-```
-
-
-
-### Complicated Wires
-
-**Description**
-
-The Complicated Wires module contains 6 wires with 3 different attributes (colour, star, and LED). Any amount of wires on this module may be cut in order to solve.
-
-
-
-##### Input
-
-- `wires: String` - a String containing the wire colour(s), if there's a star, and if the light is on, delimited by a comma and a space. If there is no star, or the light is not on, then do not include "star" or "light" in the string respectively.
-- `bomb: Object` an instance of the bomb object.
-
-
-
-##### Example
-
-```js
-const Bomb = require("./bomb.js")
-const Complicated = require("./module_solutions/complicated/complicated.js")
-
-let bomb = Bomb.bomb_check()
-
-Complicated.solve("white star, red star, red star, blue star, blue light star, red white light star", bomb)
-```
-
-```shell
->> yes yes yes no no yes
-```
-
-
-
-### Maze
-
-**Description**
-
-The Maze module contains a maze with invisible walls, white light that the Defuser controls, a red triangle that the white light must get to, and two green circles. Each position counts from 0. The position is down first, then across.
-
-This module uses [a modified version of this maze algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
-
-
-
-##### Input
-
-- `ind: Array` - an Array of the position of either green indicator.
-- `start: Array` - an Array of the position of the white light.
-- `end: Array` - an Array of the position of the red triangle.
-
-
-
-##### Example
-
-```js
-const Maze = require("./module_solutions/maze/maze.js")
-
-// down first, then along
-Maze.solve([0,1], [2,2], [0,1])
-```
-
-```shell
->> [ 'DOWN', 'RIGHT', 'RIGHT', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'LEFT', 'UP', 'LEFT', 'LEFT' ]
-```
-
-
-
-### Wire Sequence
-
-**Description**
-
-The Wire Sequence module contains between 4 and 12 coloured wires that route to letters. Any amount of wires on this module may be cut in order to solve.
-
-This module requires continuous calls in order to function properly, as information from previous stages are required to solve this module.
-
-
-
-##### Input
-
-- `wires: String` - A String containing the wire colour, and the letter it routes to, delimited by a comma and a space.
-- `bomb: Object` an instance of the bomb object.
+- `reset_memory()` - Reset the Memory module. This is called automatically after completing solving the Memory module. 
+- `reset_sequence()` - Reset the Sequence module. This is called automatically after completing solving the Sequence module. 
 
 
 
 **Example**
 
 ```js
-const Bomb = require("./bomb.js")
-const Sequence = require("./module_solutions/sequence/sequence.js")
-
-let bomb = Bomb.bomb_check()
-
-Sequence.solve("black a, black b", bomb)
-Sequence.solve("red c, red a, red c", bomb)
-Sequence.solve("red a", bomb)
-Sequence.solve("blue b, red a, blue b", bomb)
+let bomb = new Bomb(2, true, false, false, true, 1)
 ```
 
-```shell
->> yes no 
->> yes no no 
->> yes 
->> yes no no 
+
+
+
+
+
+
+## Modules
+
+More information about the modules, as well as how to solve them, can be found at the [Bomb Defusal Manual](https://www.bombmanual.com/).
+
+Input for each module is CaSe SeNsItIvE.
+
+
+
+### Wires
+
+##### Input
+
+- `wires: Array<String>` - a String array with each wire colour.
+  - Possible colours: `red`, `blue`, `yellow`, `black`, `white`
+- `bomb: Object` - an instance of the bomb object.
+
+**Output**
+
+- The index of the wire that should be cut.
+
+**Throws**
+
+- If the amount of wires is incorrect.
+
+
+
+##### Example
+
+```javascript
+import Bomb from "ktane-solver/modules/bomb"
+import Wires from "ktane-solver/modules/wires"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Wires.solve(["red", "blue", "blue"], bomb)
+
+>> 2
+```
+
+
+
+ ### Button
+
+##### Input for part 1
+
+- `button: String` - a String describing the button's colour and text, in that order.
+  - Possible colours: `red`, `blue`, `yellow`, `black`, `white`
+  - Possible texts: `abort`, `detonate`, `hold`, `press`
+- `bomb: Object` - an instance of the bomb object.
+
+**Output for part 1**
+
+- What the Defuser should with the button after pressing it.
+  - `"HOLD"` - the button should be pressed and held.
+  - `"RELEASE"` - the button should be pressed and immediately released.
+
+**Throws**
+
+- If either `colour` or `text` are undefined.
+
+
+
+**Input for part 2**
+
+- `strip: String` - a String describing the colour of the strip.
+  - Possible colours: `red`, `blue`, `yellow`, `white`
+
+**Output for part 2**
+
+- When the button should be released.
+  - `"1"` - the button should be released when the countdown timer has a 1 in any position.
+  - `"4"` - the button should be released when the countdown timer has a 4 in any position.
+  - `"5"` - the button should be released when the countdown timer has a 5 in any position.
+
+
+
+**Examples**
+
+*Part 1 example*
+
+```javascript
+import Bomb from "ktane-solver/bomb"
+import Wires from "ktane-solver/button"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Button.solve("red detonate", bomb)
+
+>> "HOLD"
+```
+
+
+
+*Part 2 example*
+
+```js
+import Bomb from "ktane-solver/bomb"
+import Wires from "ktane-solver/button"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Button.solve("blue")
+
+>> 4
+```
+
+
+
+### Keypad
+
+
+##### Input
+ - `symbols: Array<String>` - a String array with each symbol description
+    - A list of [each symbol, and their name, can be found here](./resources/moreinfo.md).
+
+**Output**
+
+- The order at which the symbols should be pressed.
+
+**Throws**
+
+- If any symbol(s) aren't recognised.
+
+
+
+
+##### Example
+```javascript
+import Keypad from "ktane-solver/keypad"
+
+Keypad.solve(["cat", "curly h", "at", "backwards c"])
+
+>> ["at", "cat", "curly h", "backwards c"]
+```
+
+
+
+### Simon Says
+
+##### Input
+
+- `colours: Array<String>`  - a String array with each colour.
+  - Possible colours: `red`, `blue`, `yellow`, `green`
+- `bomb: Object` - an instance of the bomb object.
+
+**Output**
+
+- The colours that the Defuser should press, in order.
+
+
+
+##### Example
+
+```js
+import Bomb from "ktane-solver/bomb"
+import SimonSays from "ktane-solver/simonsays"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+SimonSays.solve(["red", "red", "blue"], bomb)
+
+>> [ "blue", "blue", "red" ]
+```
+
+
+
+### Who's On First
+
+##### Input for part 1
+
+- `word: String` - the display word.
+
+**Output for part 1**
+
+- The position of the word on the module, that should be the input for part 2.
+  - Possible positions: `TL` (top left), `TR` (top right), `ML` (middle left), `MR` (middle right), `BL` (bottom left), `BR` (bottom right).
+
+**Throws**
+
+- If a word is unrecognised.
+
+
+
+**Input for part 2**
+
+- `word: String` - the word, based on the position output from part 1.
+
+**Output for part 2**
+
+- A list of possible words, in order. The first word that both appears on the list, and on the module, should be pressed by the Defuser.
+
+**Throws**
+
+- If a word is unrecognised.
+
+
+
+##### Examples
+
+*Part 1 example*
+
+```js
+import WhosOnFirst from "ktane-solver/whosonfirst"
+
+WhosOnFirst.solvePartOne("says")
+
+>> "BR"
+```
+
+
+
+*Part 2 example*
+
+```js
+import WhosOnFirst from "ktane-solver/whosonfirst"
+
+WhosOnFirst.solvePartTwo("right")
+
+>> "YES, NOTHING, READY, PRESS, NO, WAIT, WHAT, RIGHT"
+```
+
+
+
+### Memory
+
+##### Input
+
+- `numbers: Array<int>` -  an int array of the module's numbers, starting with the display number, and numbers below, in order from left-to-right.
+- `bomb: Object` - an instance of the bomb object.
+
+**Output**
+
+- The label of the button that the Defuser should press.
+
+**Throws**
+
+- If the passed array has more than 5 elements.
+- If the passed array contains a number that isn't 1, 2, 3, or 4.
+
+
+
+**Notes**
+
+This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
+
+
+
+##### Example
+
+```js
+import Bomb from "ktane-solver/bomb"
+import Memory from "ktane-solver/memory"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Memory.solve([4,1,3,4,2], bomb)
+Memory.solve([3,3,1,2,4], bomb)
+Memory.solve([4,3,1,2,4], bomb)
+Memory.solve([2,2,4,1,3], bomb)
+Memory.solve([2,2,4,1,3], bomb)
+
+>> 2
+>> 3
+>> 4
+>> 2
+>> 3
+```
+
+ 
+
+### Morse Code
+
+##### Input
+
+- `morse: Array<String>` -  a String array of Morse Code characters.
+
+**Output**
+
+- The value of the frequency that the Defuser should press.
+
+**Throws**
+
+- If the translated word doesn't match to a frequency.
+
+
+
+##### Example
+
+```js
+import Morse from "ktane-solver/morse"
+
+Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot dash dot dot"])
+
+>> 3.505
+```
+
+
+
+### Complicated Wires
+
+##### Input
+
+- `wires: Array<String>` - a String array describing the wire colour(s), if there's a star, and if the light is on.
+- `bomb: Object` an instance of the bomb object.
+
+**Output**
+
+- A list of Booleans describing if each wire should be cut.
+  - `true` - cut the wire.
+  - `false` - don't cut the wire.
+
+**Throws**
+
+- If a colour is unrecognised.
+
+
+
+**Notes**
+
+- If there's no star, you don't need to include "star" in the wire description.
+
+- If the light is not on, you don't need to include "light" in the wire description.
+
+- The order of each wire description doesn't matter. i.e. `light red star`, `red star light`, and `star light red` are all equivalent and valid inputs.
+
+- The order of each wire colour doesn't matter. i.e. `red blue` and `blue red` are the both equivalent and valid inputs.
+
+
+
+##### Example
+
+```js
+import Bomb from "ktane-solver/bomb"
+import Complicated from "ktane-solver/complicated"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Complicated.solve(["white star", "red star", "red star", "blue star", "light blue star", "light red white star"], bomb)
+
+>> [ true, true, true, false, false, true ]
+```
+
+
+
+### Maze
+
+##### Input
+
+- `ind: Array<int>` - an int array of the position of either green indicator.
+- `start: Array<int>` - an int array of the position of the white light.
+- `end: Array<int>` - an int array of the position of the red triangle.
+
+**Output**
+
+- A list of directions that the Defuser should input into the module.
+  - Possible directions: `UP`, `DOWN`, `LEFT`, `RIGHT`
+
+**Throws**
+
+- If the green indicator is unrecognised.
+
+
+
+**Notes**
+
+- Each position counts from 0.
+
+- The position follows the following notation: down first, then across.
+- Only one green indicator is required to identify the correct maze.
+
+- This module uses [a modified version of this maze algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
+
+
+
+##### Example
+
+```js
+import Maze from "ktane-solver/maze"
+
+// down first, then along
+Maze.solve([4, 2], [3, 5], [4, 0])
+
+>> [ 'DOWN','LEFT','UP','UP','RIGHT','UP','UP','LEFT','DOWN','LEFT','DOWN','DOWN','DOWN','DOWN','LEFT','LEFT','LEFT','UP' ]
+```
+
+*Based on this maze configuration:*
+
+![](/resources/mazeexample.png)
+
+
+
+### Wire Sequence
+
+##### Input
+
+- `wires: Array<String>` - a String array describing the wire colour, and the letter it routes to.
+- `bomb: Object` an instance of the bomb object.
+
+**Output**
+
+- A list of Booleans describing if each wire should be cut.
+  - `true` - cut the wire.
+  - `false` - don't cut the wire.
+
+**Throws**
+
+- If a colour is unrecognised.
+- If a letter is unrecognised.
+
+
+
+**Notes**
+
+- The number on the left side of the module is not required to solve. 
+- This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
+
+
+
+**Example**
+
+```js
+import Bomb from "ktane-solver/bomb"
+import Sequence from "ktane-solver/sequence"
+
+let bomb = new Bomb(2, true, false, false, true, 1)
+
+Sequence.solve(["black a", "black b"], bomb)
+Sequence.solve(["red c", "red a", "red c"], bomb)
+Sequence.solve(["red a"], bomb)
+Sequence.solve(["blue b", "red a", "blue b"], bomb)
+
+>> [ true, false ]
+>> [ true, false, false ]
+>> [ true ]
+>> [ true, false, false ]
 ```
 
 
 
 ### Password
 
-**Description**
-
-The Password module contains a row of 5 letters; each letter can be cycled through.
-
-
-
 **Input**
 
-- `letters: String` - a String containing each letter in the cycle, delimited by a comma and a space.
+- `letters: Array<String>` - a String array describing each letter in each cycle.
+
+**Output**
+
+- The correct password.
+
+**Throws**
+
+- If more than 1 possible password is found.
 
 
 
 ##### Example
 
 ```js
-const Password = require("./module_solutions/password/password.js")
+import Password from "ktane-solver/password"
 
-Password.solve("kqtfhy, hwjfus, rinybk, ynukj, ipkxvc")
-```
+Password.solve(["kqtfhy", "hwjfus", "rinybk", "ynukj", "ipkxvc"])
 
-```shell
->> think
+>> "THINK"
 ```
 
 
 
 ## Needy Modules
 
-Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge can be "solved" by the Defuser.
+Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge can be handled by the Defuser.
 
 
 
 ### Knob
 
-**Description**
-
-The Knob module contains a knob, and 12 lights which dictates which direction the knob should point.
-
-
-
 ##### Input
 
-- `lights: String` - the condition of each light (1 for on; 0 for off), top-to-bottom, left-to-right.
+- `lights: String` - the condition of each light.
+  - `1` - the light is on.
+  - `0` - the light is off.
+
+**Output**
+
+- The direction that the knob should be pointed.
+
+**Throws**
+
+- If a light sequence is unrecognised.
+
+
+
+**Notes**
+
+- The order should be left-to-right, top-to-bottom.
 
 
 
 ##### Example
 
 ```js
-const Knob = require("./module_solutions/knob/knob.js")
+import Knob from "ktane-solver/knob"
 
 Knob.solve("101100111010")
-```
 
-```shell
->> Right
+>> RIGHT
 ```
