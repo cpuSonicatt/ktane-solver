@@ -301,7 +301,7 @@ WhosOnFirst.solvePartTwo("right")
 
 **Notes**
 
-This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
+- This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
 
 
 
