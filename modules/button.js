@@ -41,8 +41,4 @@ class Button {
     }
 
 }
-
-const Bomb = require("./bomb")
-console.log(Button.solve("reddetonate", new Bomb()))
-
 module.exports = Button

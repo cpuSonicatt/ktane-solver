@@ -54,7 +54,4 @@ class Wires {
     } 
 }
 
-const Bomb = require("./bomb")
-console.log(Wires.solve([], new Bomb))
-
 module.exports = Wires

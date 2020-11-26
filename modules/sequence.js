@@ -49,8 +49,5 @@ class Sequence {
     }
 
 }
-const bomb = require("./bomb")
-console.log(Sequence.solve(["red a"], new bomb()))
-
 
 module.exports = Sequence

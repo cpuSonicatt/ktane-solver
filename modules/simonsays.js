@@ -71,12 +71,4 @@ function choose_translate(bomb) {
     }
 }
 
-const Bomb = require("./bomb.js")
-// import SimonSays from "ktane-solver/simonsays"
-
-let bomb = new Bomb(2, true, false, false, true, 1)
-
-console.log(SimonSays.solve(["red", "red", "blue"], bomb))
-
-
 module.exports = SimonSays
