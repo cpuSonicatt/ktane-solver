@@ -87,8 +87,8 @@ Input for each module is CaSe SeNsItIvE.
 ##### Example
 
 ```javascript
-import Bomb from "ktane-solver/modules/bomb"
-import Wires from "ktane-solver/modules/wires"
+import Bomb from "ktane-solver/bomb"
+import Wires from "ktane-solver/wires"
 
 let bomb = new Bomb(2, true, false, false, true, 1)
 
@@ -188,9 +188,9 @@ Button.solve("blue")
 ```javascript
 import Keypad from "ktane-solver/keypad"
 
-Keypad.solve(["cat", "curly h", "at", "backwards c"])
+Keypad.solve(["kitty", "curly h", "at", "backwards c"])
 
->> ["at", "cat", "curly h", "backwards c"]
+>> ["at", "kitty", "curly h", "backwards c"]
 ```
 
 

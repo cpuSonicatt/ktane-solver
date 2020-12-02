@@ -10,7 +10,7 @@
 | ![](blackstar.png)  | black star  |
 | ![](butt.png)       | butt        |
 | ![](cwithdot.png)   | c with dot  |
-| ![](cat.png)        | cat         |
+| ![](kitty.png)      | kitty       |
 | ![](copyright.png)  | copyright   |
 | ![](curlyh.png)     | curly h     |
 | ![](dragon.png)     | dragon      |
