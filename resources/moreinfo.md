@@ -12,6 +12,7 @@
 | ![](cwithdot.png)   | c with dot  |
 | ![](copyright.png)  | copyright   |
 | ![](curlyh.png)     | curly h     |
+| ![](doublek.png)    | double k   |
 | ![](dragon.png)     | dragon      |
 | ![](euro.png)       | euro        |
 | ![](fork.png)       | fork        |
