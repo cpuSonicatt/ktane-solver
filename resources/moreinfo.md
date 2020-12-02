@@ -10,13 +10,13 @@
 | ![](blackstar.png)  | black star  |
 | ![](butt.png)       | butt        |
 | ![](cwithdot.png)   | c with dot  |
-| ![](kitty.png)      | kitty       |
 | ![](copyright.png)  | copyright   |
 | ![](curlyh.png)     | curly h     |
 | ![](dragon.png)     | dragon      |
 | ![](euro.png)       | euro        |
 | ![](fork.png)       | fork        |
 | ![](halfthree.png)  | half three  |
+| ![](kitty.png)      | kitty       |
 | ![](lambda.png)     | lambda      |
 | ![](lettern.png)    | letter n    |
 | ![](lightning.png)  | lightning   |
