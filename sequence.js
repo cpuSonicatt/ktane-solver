@@ -1,8 +1,8 @@
-redRule = ["c", "b", "a", "ac", "b", "ac", "abc", "ab", "b"]
+const redRule = ["c", "b", "a", "ac", "b", "ac", "abc", "ab", "b"]
 
-blueRule = ["b", "ac", "b", "a", "b", "bc", "c", "ac", "a"]
+const blueRule = ["b", "ac", "b", "a", "b", "bc", "c", "ac", "a"]
 
-blackRule = ["abc", "ac", "b", "ac", "b", "bc", "ab", "c", "c"]
+const blackRule = ["abc", "ac", "b", "ac", "b", "bc", "ab", "c", "c"]
 
 class Sequence {
 

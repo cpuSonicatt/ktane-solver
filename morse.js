@@ -1,4 +1,4 @@
-morseList = [
+const morseList = [
     "dot dash",
     "dash dot dot dot",
     "dash dot dash dot",

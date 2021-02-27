@@ -1,4 +1,4 @@
-choices = [
+const choices = [
     "ae",
     "at",
     "b",
@@ -28,7 +28,7 @@ choices = [
     "white star"
 ]
 
-solutions = [
+const solutions = [
     ["balloon", "at", "lambda", "lightning", "kitty", "curly h", "backwards c"],
     ["euro", "balloon", "backwards c", "pig tail", "white star", "curly h", "question"],
     ["copyright", "butt", "pig tail", "double k", "half three", "lambda", "white star"],
@@ -40,6 +40,10 @@ solutions = [
 class Keypad {
 
     static solve(symbols) {
+
+        if (symbols.length !== 4) {
+            throw "Expected 4 symbols, got " + symbols.length
+        }
         
         let checker = (arr, target) => target.every(v => arr.includes(v));
 
@@ -48,8 +52,11 @@ class Keypad {
                 return solutions[x].filter(x => symbols.includes(x))
             }
         }
-        symbols = symbols.filter(x => !choices.includes(x))
-        throw "Unexpected symbol" + (symbols.length > 1 ? "s" : "") + ", got " + symbols
+
+        for (let x of symbols) {
+            if (!choices.includes(x)) throw "Unexpected symbol" + (symbols.length > 1 ? "s" : "") + ", got " + symbols.filter(x => !choices.includes(x))
+            else if (symbols.length === 4) throw "No solution found for: " + symbols  
+        }
 
     }
 }
