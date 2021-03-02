@@ -86,4 +86,4 @@ class Memory {
     }
 }
 
-module.exports = Memory
+export default Memory

@@ -3,7 +3,7 @@ const passwords = ["about", "after", "again", "below", "could", "every", "first"
 class Password { 
 
     static solve(letters) {
-        let index = 0;
+        let index = 0
 
         for (let row of letters) {
             let rowArr = row.split("")
@@ -21,4 +21,4 @@ class Password {
     }
 }
 
-module.exports = Password
+export default Password

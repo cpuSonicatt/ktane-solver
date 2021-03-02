@@ -1,6 +1,7 @@
 class Wires {
 
     static solve(wires, bomb) {
+        wires = wires.map(v => v.toLowerCase())
         wires.count = function(element) {
             return wires.filter(n => n === element).length
         }
@@ -54,4 +55,4 @@ class Wires {
     } 
 }
 
-module.exports = Wires
+export default Wires

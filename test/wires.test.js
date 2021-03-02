@@ -1,5 +1,5 @@
-const Wires = require("../wires.js")
-const Bomb = require("../bomb.js")
+import Wires from "../wires.js"
+import Bomb from "../bomb.js"
 
 test("2 wires", () => {
     expect(() => Wires.solve(["red", "blue"], getBomb())).toThrow("Expected between 3 and 6 wires, got 2")
@@ -25,6 +25,10 @@ test("Even serial digit", () => {
 test("Odd serial digit", () => {
     let bomb = new Bomb(1, true, false, false, true, 1)
     expect(Wires.solve(["red", "red", "blue", "yellow"], getBombOfSerial(3))).toEqual(1)
+})
+
+test("3 wires, mIxEd CaSe", () => {
+    expect(Wires.solve(["red", "BLUE", "BlUe"], getBomb())).toEqual(2)
 })
 
 function getBomb() {

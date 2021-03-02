@@ -131,9 +131,9 @@ class Maze {
 
     static solve(ind, start, end) {
 
-        maze = choose_maze(ind)
+        maze = _choose_maze(ind)
         maze[end[0] * 2][end[1] * 2] = 2
-        find(start[1] * 2, start[0] * 2)
+        _find(start[1] * 2, start[0] * 2)
         path = path.filter((element, index) => {
             return index % 2 === 0;
           })
@@ -142,7 +142,7 @@ class Maze {
 
 }
 
-function find(col, row, visited = new Set) { 
+function _find(col, row, visited = new Set) { 
 
     const cellId = row * 11 + col;
 
@@ -171,7 +171,7 @@ function find(col, row, visited = new Set) {
     }
 }
 
-function choose_maze(ind) {
+function _choose_maze(ind) {
     switch (ind.join("")) {
         case "10":
         case "25":
@@ -207,4 +207,4 @@ function choose_maze(ind) {
     }
 }
 
-module.exports = Maze
+export default Maze

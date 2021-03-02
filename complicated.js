@@ -1,6 +1,7 @@
 class Complicated {
 
     static solve(wires, bomb) {
+        wires = wires.map(v => v.toLowerCase());
         let solution = []
 
         let s = bomb.digit % 2 == 0
@@ -79,4 +80,4 @@ class Complicated {
 
 }
 
-module.exports = Complicated
+export default Complicated

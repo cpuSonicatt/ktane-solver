@@ -32,6 +32,8 @@ const wordsMap = {
 class WhosOnFirst {
 
     static solvePartOne(word) {
+
+        word = word.toLowerCase()
         
         switch(word) {
             case "ur":
@@ -60,6 +62,7 @@ class WhosOnFirst {
     }
 
     static solvePartTwo(word) {
+        word = word.toLowerCase()
         let solution = wordsMap[word]
         if (solution) {
             return solution
@@ -71,4 +74,4 @@ class WhosOnFirst {
 
 }
 
-module.exports = WhosOnFirst
+export default WhosOnFirst

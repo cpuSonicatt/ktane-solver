@@ -37,4 +37,4 @@ class Bomb {
 
 }
 
-module.exports = Bomb
+export default Bomb

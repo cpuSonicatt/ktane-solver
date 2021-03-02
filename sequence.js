@@ -7,6 +7,8 @@ const blackRule = ["abc", "ac", "b", "ac", "b", "bc", "ab", "c", "c"]
 class Sequence {
 
     static solve(wires, bomb) {
+
+        wires = wires.map(v => v.toLowerCase())
         
         let solution = []
         bomb.sequenceStage++
@@ -50,4 +52,4 @@ class Sequence {
 
 }
 
-module.exports = Sequence
+export default Sequence

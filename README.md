@@ -4,6 +4,30 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
 
 
 
+## Contents
+
+- [Installing](#installing)
+- [Terms](#terms)
+- [The Bomb object](#the-bomb-object)
+
+- [Modules](#modules)
+  - [Wires](#wires)
+  - [Button](#button)
+  - [Keypad](#keypad)
+  - [Simon Says](#simon-says)
+  - [Who's On First](#whos-on-first)
+  - [Memory](#memory)
+  - [Morse Code](#morse-code)
+  - [Complicated Wires](#complicated-wires)
+  - [Maze](#maze)
+  - [Wire Sequence](#wire-sequence)
+  - [Password](#password)
+
+- [Needy Modules](#needy-modules)
+  - [Knob](#knob)
+
+
+
 ## Installing
 
 `npm i ktane-solver`
@@ -53,16 +77,9 @@ let bomb = new Bomb(2, true, false, false, true, 1)
 ```
 
 
-
-
-
-
-
 ## Modules
 
 More information about the modules, as well as how to solve them, can be found at the [Bomb Defusal Manual](https://www.bombmanual.com/).
-
-Input for each module is CaSe SeNsItIvE.
 
 
 

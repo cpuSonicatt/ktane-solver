@@ -1,6 +1,7 @@
 class Button {
 
     static solve(input, bomb) {
+        input = input.toLowerCase()
 
         if (bomb) {
 
@@ -41,4 +42,5 @@ class Button {
     }
 
 }
-module.exports = Button
+
+export default Button

@@ -40,6 +40,7 @@ const solutions = [
 class Keypad {
 
     static solve(symbols) {
+        symbols = symbols.map(v => v.toLowerCase());
 
         if (symbols.length !== 4) {
             throw "Expected 4 symbols, got " + symbols.length
@@ -61,5 +62,5 @@ class Keypad {
     }
 }
 
-module.exports = Keypad
+export default Keypad
 

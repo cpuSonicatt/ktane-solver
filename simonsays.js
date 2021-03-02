@@ -1,6 +1,8 @@
 class SimonSays {
 
     static solve(colours, bomb) {
+        colours = colours.map(v => v.toLowerCase())
+
         let board = choose_translate(bomb)
         
         let solution = []
@@ -71,4 +73,4 @@ function choose_translate(bomb) {
     }
 }
 
-module.exports = SimonSays
+export default SimonSays

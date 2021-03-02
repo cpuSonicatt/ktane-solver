@@ -26,4 +26,4 @@ class Knob {
 
 }
 
-module.exports = Knob
+export default Knob

@@ -31,6 +31,9 @@ const morseList = [
 class Morse {
 
     static solve(morse) {
+
+        morse = morse.map(v => v.toLowerCase());
+
         let word = ""
         morse.forEach(letter => {
             word += String.fromCharCode(morseList.indexOf(letter) + 97)
@@ -93,4 +96,4 @@ class Morse {
 
 }
 
-module.exports = Morse
+export default Morse
