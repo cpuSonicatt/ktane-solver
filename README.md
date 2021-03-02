@@ -64,8 +64,8 @@ Some modules require information about the bomb in order to solve.
 **Methods**
 
 - `add_strike()` - Add a strike to the bomb.
-- `reset_memory()` - Reset the Memory module. This is called automatically after completing solving the Memory module. 
-- `reset_sequence()` - Reset the Sequence module. This is called automatically after completing solving the Sequence module. 
+- `reset_memory()` - Reset the Memory module. This is called automatically after solving the Memory module. 
+- `reset_sequence()` - Reset the Sequence module. This is called automatically after solving the Sequence module. 
 
 
 
