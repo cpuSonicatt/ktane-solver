@@ -72,9 +72,14 @@ Some modules require information about the bomb in order to solve.
 **Example**
 
 ```js
-let bomb = new Bomb(2, true, false, false, true, 1)
+let bomb = new Bomb(2, true, false, true, true, 1)
 ```
-
+This creates a bomb instance that has:
+- A serial code `A????2`
+- No CAR lit indication
+- A FRK lit indicator
+- A parallel port
+- 1 battery
 
 ## Modules
 
