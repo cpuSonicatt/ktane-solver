@@ -40,8 +40,8 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
 - **Modules** - a device which contains a single, solvable puzzle which needs to be solved by the Defuser.
 - **Needy Modules** - a device which contains a single, unsolvable puzzle which needs to be regularly tended to by the Defuser.
 - **Stage** - a section or part of a module, indicated by a green LED on the right side of the module.
-- **Defuser** - the person which has sole access to the bomb.
-- **Expert** - the person/people which has sole access to the Bomb Defusal Manual.
+- **Defuser** - the person that has sole access to the bomb.
+- **Expert(s)** - the person/people that has/have sole access to the Bomb Defusal Manual.
 - **"bomb check"** - the process of gathering information about the bomb.
 - **"display number" or "display letter"** - the big number/letter at the top of some modules.
 
@@ -64,18 +64,22 @@ Some modules require information about the bomb in order to solve.
 **Methods**
 
 - `add_strike()` - Add a strike to the bomb.
-
-- `reset_memory()` - Reset the Memory module. This is called automatically after completing solving the Memory module. 
-- `reset_sequence()` - Reset the Sequence module. This is called automatically after completing solving the Sequence module. 
+- `reset_memory()` - Reset the Memory module. This is called automatically after solving the Memory module. 
+- `reset_sequence()` - Reset the Sequence module. This is called automatically after solving the Sequence module. 
 
 
 
 **Example**
 
 ```js
-let bomb = new Bomb(2, true, false, false, true, 1)
+let bomb = new Bomb(2, true, false, true, true, 1)
 ```
-
+This creates a bomb instance that has:
+- A serial code `A????2`
+- No CAR lit indication
+- A FRK lit indicator
+- A parallel port
+- 1 battery
 
 ## Modules
 
@@ -196,7 +200,9 @@ Button.solve("blue")
 
 **Throws**
 
+- If exactly 4 symbols aren't passed.
 - If any symbol(s) aren't recognised.
+- If a solution for the given symbols isn't found.
 
 
 
@@ -250,7 +256,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 **Output for part 1**
 
 - The position of the word on the module, that should be the input for part 2.
-  - Possible positions: `TL` (top left), `TR` (top right), `ML` (middle left), `MR` (middle right), `BL` (bottom left), `BR` (bottom right).
+  - Possible positions: `TL` (top left), `TR` (top right), `ML` (middle left), `MR` (middle right), `BL` (bottom left), `BR` (bottom right)
 
 **Throws**
 
@@ -378,6 +384,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 ##### Input
 
 - `wires: Array<String>` - a String array describing the wire colour(s), if there's a star, and if the light is on.
+  - Possible colours, up to 2 at once: `red`, `white`, `blue`
 - `bomb: Object` an instance of the bomb object.
 
 **Output**
@@ -396,7 +403,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 
 - If there's no star, you don't need to include "star" in the wire description.
 
-- If the light is not on, you don't need to include "light" in the wire description.
+- If the light isn't on, you don't need to include "light" in the wire description.
 
 - The order of each wire description doesn't matter. i.e. `light red star`, `red star light`, and `star light red` are all equivalent and valid inputs.
 
@@ -445,7 +452,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 - The position follows the following notation: down first, then across.
 - Only one green indicator is required to identify the correct maze.
 
-- This module uses [a modified version of this maze algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
+- This solution uses a modified version of [this maze-solving algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
 
 
 
@@ -471,6 +478,8 @@ Maze.solve([4, 2], [3, 5], [4, 0])
 ##### Input
 
 - `wires: Array<String>` - a String array describing the wire colour, and the letter it routes to.
+  - Possible colours: `red`, `black`, `blue`
+  - Possible letters: `A`, `B`, `C`
 - `bomb: Object` an instance of the bomb object.
 
 **Output**
