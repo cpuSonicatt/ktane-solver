@@ -447,11 +447,9 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 
 **Notes**
 
-- Each position counts from 0.
-
-- The position follows the following notation: down first, then across.
+- Each position counts from 1.
+- The position follows the following notation: across first, then down.
 - Only one green indicator is required to identify the correct maze.
-
 - This solution uses a modified version of [this maze-solving algorithm](https://stackoverflow.com/a/52146134/12865020). Thank you trincot.
 
 
@@ -461,10 +459,10 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 ```js
 import Maze from "ktane-solver/maze"
 
-// down first, then along
-Maze.solve([4, 2], [3, 5], [4, 0])
+Maze.solve([3, 5], [6, 4], [1, 5])
 
->> [ 'DOWN','LEFT','UP','UP','RIGHT','UP','UP','LEFT','DOWN','LEFT','DOWN','DOWN','DOWN','DOWN','LEFT','LEFT','LEFT','UP' ]
+>> ['DOWN', 'LEFT', 'UP', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'LEFT', 'DOWN', 'DOWN', 'DOWN', 'DOWN', 'LEFT', 'LEFT', 'LEFT', 'UP'
+]
 ```
 
 *Based on this maze configuration:*
