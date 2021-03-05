@@ -1,8 +1,19 @@
-const passwords = ["about", "after", "again", "below", "could", "every", "first", "found", "great", "house", "large", "learn", "never", "other", "place", "plant", "point", "right", "small", "sound", "spell", "still", "study", "their", "there", "these", "thing", "think", "three", "water", "where", "which", "world", "would", "write"]
+const passwords = [
+    "ABOUT", "AFTER", "AGAIN", "BELOW",
+    "COULD", "EVERY", "FIRST", "FOUND",
+    "GREAT", "HOUSE", "LARGE", "LEARN",
+    "NEVER", "OTHER", "PLACE", "PLANT",
+    "POINT", "RIGHT", "SMALL", "SOUND",
+    "SPELL", "STILL", "STUDY", "THEIR",
+    "THERE", "THESE", "THING", "THINK",
+    "THREE", "WATER", "WHERE", "WHICH",
+    "WORLD", "WOULD", "WRITE"
+]
 
 class Password { 
 
     static solve(letters) {
+        letters = letters.map(v => v.toLowerCase())
         let index = 0
 
         for (let row of letters) {
@@ -13,7 +24,7 @@ class Password {
                 })
             index++
             if (passwords.length == 1) {
-                return passwords[0].toUpperCase()
+                return passwords[0]
             }
         }
 

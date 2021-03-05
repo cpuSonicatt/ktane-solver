@@ -18,12 +18,10 @@ test("7 wires", () => {
 })
 
 test("Even serial digit", () => {
-    let bomb = new Bomb(2, true, false, false, true, 1)
     expect(Wires.solve(["red", "red", "blue", "yellow"], getBombOfSerial(2))).toEqual(0)
 })
 
 test("Odd serial digit", () => {
-    let bomb = new Bomb(1, true, false, false, true, 1)
     expect(Wires.solve(["red", "red", "blue", "yellow"], getBombOfSerial(3))).toEqual(1)
 })
 

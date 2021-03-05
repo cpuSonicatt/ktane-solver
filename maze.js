@@ -132,8 +132,8 @@ class Maze {
     static solve(ind, start, end) {
 
         maze = _choose_maze(ind)
-        maze[end[0] * 2][end[1] * 2] = 2
-        _find(start[1] * 2, start[0] * 2)
+        maze[(end[1] - 1) * 2][(end[0] - 1) * 2] = 2
+        _find((start[0] - 1 ) * 2, (start[1] - 1) * 2)
         path = path.filter((element, index) => {
             return index % 2 === 0;
           })
@@ -158,7 +158,7 @@ function _find(col, row, visited = new Set) {
 
     for (const [addcol, addrow] of [[0, 1],[1, 0],[0, -1],[-1, 0]]) {
         
-        const found = find(col+addcol, row+addrow, visited);
+        const found = _find(col+addcol, row+addrow, visited);
 
         if (found) {
             if (addcol == 1 && addrow == 0) path.push("RIGHT")
@@ -173,32 +173,32 @@ function _find(col, row, visited = new Set) {
 
 function _choose_maze(ind) {
     switch (ind.join("")) {
-        case "10":
-        case "25":
-            return mazeA
-        case "14":
-        case "31":
-            return mazeB
-        case "33":
-        case "35":
-            return mazeC
-        case "00":
-        case "30":
-            return mazeD
-        case "53":
-        case "24":
-            return mazeE
-        case "40":
-        case "42":
-            return mazeF
-        case "01":
-        case "51":
-            return mazeG
-        case "03":
-        case "32":
-            return mazeH
-        case "40":
         case "12":
+        case "63":
+            return mazeA
+        case "52":
+        case "24":
+            return mazeB
+        case "44":
+        case "64":
+            return mazeC
+        case "11":
+        case "14":
+            return mazeD
+        case "46":
+        case "53":
+            return mazeE
+        case "51":
+        case "35":
+            return mazeF
+        case "21":
+        case "26":
+            return mazeG
+        case "41":
+        case "24":
+            return mazeH
+        case "15":
+        case "32":
             return mazeI
 
         default:
@@ -206,5 +206,6 @@ function _choose_maze(ind) {
                                                                         
     }
 }
+
 
 export default Maze
