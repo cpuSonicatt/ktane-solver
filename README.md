@@ -64,6 +64,7 @@ Some modules require information about the bomb in order to solve.
 **Methods**
 
 - `add_strike()` - Add a strike to the bomb.
+- `reset_strikes` - Reset the bomb's strike count.
 - `reset_memory()` - Reset the Memory module. This is called automatically after solving the Memory module. 
 - `reset_sequence()` - Reset the Sequence module. This is called automatically after solving the Sequence module. 
 
@@ -75,7 +76,7 @@ Some modules require information about the bomb in order to solve.
 let bomb = new Bomb(2, true, false, true, true, 1)
 ```
 This creates a bomb instance that has:
-- A serial code `A????2`
+- A serial code `A____2`
 - No CAR lit indication
 - A FRK lit indicator
 - A parallel port
