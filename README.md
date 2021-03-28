@@ -3,7 +3,6 @@
 A JavaScript library to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
-
 ## Contents
 
 - [Installing](#installing)
@@ -27,11 +26,9 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
   - [Knob](#knob)
 
 
-
 ## Installing
 
 `npm i ktane-solver`
-
 
 
 ## Terms
@@ -83,6 +80,8 @@ This creates a bomb instance that has:
 - A parallel port
 - 1 battery
 
+---
+
 ## Modules
 
 More information about the modules, as well as how to solve them, can be found at the [Bomb Defusal Manual](https://www.bombmanual.com/).
@@ -120,9 +119,9 @@ Wires.solve(["red", "blue", "blue"], bomb)
 >> 2
 ```
 
+---
 
-
- ### Button
+### Button
 
 ##### Input for part 1
 
@@ -187,7 +186,7 @@ Button.solve("blue")
 >> 4
 ```
 
-
+---
 
 ### Keypad
 
@@ -218,7 +217,7 @@ Keypad.solve(["kitty", "curly h", "at", "backwards c"])
 >> ["at", "kitty", "curly h", "backwards c"]
 ```
 
-
+---
 
 ### Simon Says
 
@@ -247,7 +246,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 >> [ "blue", "blue", "red" ]
 ```
 
-
+---
 
 ### Who's On First
 
@@ -304,7 +303,7 @@ WhosOnFirst.solvePartTwo("right")
 >> "YES, NOTHING, READY, PRESS, NO, WAIT, WHAT, RIGHT"
 ```
 
-
+---
 
 ### Memory
 
@@ -351,7 +350,7 @@ Memory.solve([2,2,4,1,3], bomb)
 >> 3
 ```
 
- 
+ ---
 
 ### Morse Code
 
@@ -379,7 +378,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 >> 3.505
 ```
 
-
+---
 
 ### Complicated Wires
 
@@ -426,7 +425,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 >> [ true, true, true, false, false, true ]
 ```
 
-
+---
 
 ### Maze
 
@@ -471,7 +470,7 @@ Maze.solve([3, 5], [6, 4], [1, 5])
 
 ![](/resources/mazeexample.png)
 
-
+---
 
 ### Wire Sequence
 
@@ -521,7 +520,7 @@ Sequence.solve(["blue b", "red a", "blue b"], bomb)
 >> [ true, false, false ]
 ```
 
-
+---
 
 ### Password
 
@@ -549,7 +548,7 @@ Password.solve(["kqtfhy", "hwjfus", "rinybk", "ynukj", "ipkxvc"])
 >> "THINK"
 ```
 
-
+---
 
 ## Needy Modules
 
