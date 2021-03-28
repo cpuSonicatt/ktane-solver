@@ -76,7 +76,8 @@ Some modules require information about the bomb in order to solve.
 let bomb = new Bomb(2, true, false, true, true, 1)
 ```
 This creates a bomb instance that has:
-- A serial code `A____2`
+- A serial code with a vowel, and an even number as the last digit
+  - For example: `AWXYZ2`
 - No CAR lit indication
 - A FRK lit indicator
 - A parallel port
