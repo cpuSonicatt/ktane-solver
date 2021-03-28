@@ -20,7 +20,11 @@ class Bomb {
     }
 
     add_strike() {
-        this.strikes++
+        this.strikes += 1
+    }
+    
+    reset_strikes() {
+        this.strikes = 0   
     }
 
     reset_memory() {
