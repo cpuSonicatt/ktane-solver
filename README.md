@@ -78,7 +78,7 @@ let bomb = new Bomb(2, true, false, true, true, 1)
 This creates a bomb instance that has:
 - A serial code with a vowel, and an even number as the last digit
   - For example: `AWXYZ2`
-- No CAR lit indication
+- No CAR lit indicator
 - A FRK lit indicator
 - A parallel port
 - 1 battery
