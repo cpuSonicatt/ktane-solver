@@ -90,7 +90,7 @@ More information about the modules, as well as how to solve them, can be found a
 
 ### Wires
 
-##### Input
+**Input**
 
 - `wires: Array<String>` - a String array with each wire colour.
   - Possible colours: `red`, `blue`, `yellow`, `black`, `white`
@@ -123,7 +123,7 @@ Wires.solve(["red", "blue", "blue"], bomb)
 
 ### Button
 
-##### Input for part 1
+**Input for part 1**
 
 - `button: String` - a String describing the button's colour and text, in that order.
   - Possible colours: `red`, `blue`, `yellow`, `black`, `white`
@@ -191,7 +191,7 @@ Button.solve("blue")
 ### Keypad
 
 
-##### Input
+**Input**
  - `symbols: Array<String>` - a String array with each symbol description
     - A list of [each symbol, and their name, can be found here](./resources/moreinfo.md).
 
@@ -221,7 +221,7 @@ Keypad.solve(["kitty", "curly h", "at", "backwards c"])
 
 ### Simon Says
 
-##### Input
+**Input**
 
 - `colours: Array<String>`  - a String array with each colour.
   - Possible colours: `red`, `blue`, `yellow`, `green`
@@ -250,7 +250,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 
 ### Who's On First
 
-##### Input for part 1
+**Input**
 
 - `word: String` - the display word.
 
@@ -307,7 +307,7 @@ WhosOnFirst.solvePartTwo("right")
 
 ### Memory
 
-##### Input
+**Input**
 
 - `numbers: Array<int>` -  an int array of the module's numbers, starting with the display number, and numbers below, in order from left-to-right.
 - `bomb: Object` - an instance of the bomb object.
@@ -354,7 +354,7 @@ Memory.solve([2,2,4,1,3], bomb)
 
 ### Morse Code
 
-##### Input
+**Input**
 
 - `morse: Array<String>` -  a String array of Morse Code characters.
 
@@ -382,7 +382,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 
 ### Complicated Wires
 
-##### Input
+**Input**
 
 - `wires: Array<String>` - a String array describing the wire colour(s), if there's a star, and if the light is on.
   - Possible colours, up to 2 at once: `red`, `white`, `blue`
@@ -429,7 +429,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 
 ### Maze
 
-##### Input
+**Input**
 
 - `ind: Array<int>` - an int array of the position of either green indicator.
 - `start: Array<int>` - an int array of the position of the white light.
@@ -474,7 +474,7 @@ Maze.solve([3, 5], [6, 4], [1, 5])
 
 ### Wire Sequence
 
-##### Input
+**Input**
 
 - `wires: Array<String>` - a String array describing the wire colour, and the letter it routes to.
   - Possible colours: `red`, `black`, `blue`
@@ -558,7 +558,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 
 ### Knob
 
-##### Input
+**Input**
 
 - `lights: String` - the condition of each light.
   - `1` - the light is on.
