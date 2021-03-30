@@ -106,7 +106,7 @@ More information about the modules, as well as how to solve them, can be found a
 
 
 
-##### Example
+**Example**
 
 ```javascript
 import Bomb from "ktane-solver/bomb"
@@ -208,7 +208,7 @@ Button.solve("blue")
 
 
 
-##### Example
+**Example**
 ```javascript
 import Keypad from "ktane-solver/keypad"
 
@@ -233,7 +233,7 @@ Keypad.solve(["kitty", "curly h", "at", "backwards c"])
 
 
 
-##### Example
+**Example**
 
 ```js
 import Bomb from "ktane-solver/bomb"
@@ -279,7 +279,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 
 
 
-##### Examples
+**Examples**
 
 *Part 1 example*
 
@@ -329,7 +329,7 @@ WhosOnFirst.solvePartTwo("right")
 
 
 
-##### Example
+**Example**
 
 ```js
 import Bomb from "ktane-solver/bomb"
@@ -368,7 +368,7 @@ Memory.solve([2,2,4,1,3], bomb)
 
 
 
-##### Example
+**Example**
 
 ```js
 import Morse from "ktane-solver/morse"
@@ -412,7 +412,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 
 
 
-##### Example
+**Example**
 
 ```js
 import Bomb from "ktane-solver/bomb"
@@ -455,7 +455,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 
 
 
-##### Example
+**Example**
 
 ```js
 import Maze from "ktane-solver/maze"
@@ -538,7 +538,7 @@ Sequence.solve(["blue b", "red a", "blue b"], bomb)
 
 
 
-##### Example
+**Example**
 
 ```js
 import Password from "ktane-solver/password"
@@ -580,7 +580,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 
 
 
-##### Example
+**Example**
 
 ```js
 import Knob from "ktane-solver/knob"
