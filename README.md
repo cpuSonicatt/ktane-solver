@@ -527,7 +527,7 @@ Password.solve(["kqtfhy", "hwjfus", "rinybk", "ynukj", "ipkxvc"])
 
 ---
 
-## Needy Modules
+## 🍞 Needy Modules
 
 Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge can be handled by the Defuser.
 
