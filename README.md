@@ -3,35 +3,12 @@
 A JavaScript library to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
-## Contents
-
-- [Installing](#installing)
-- [Terms](#terms)
-- [The Bomb object](#the-bomb-object)
-
-- [Modules](#modules)
-  - [Wires](#wires)
-  - [Button](#button)
-  - [Keypad](#keypad)
-  - [Simon Says](#simon-says)
-  - [Who's On First](#whos-on-first)
-  - [Memory](#memory)
-  - [Morse Code](#morse-code)
-  - [Complicated Wires](#complicated-wires)
-  - [Maze](#maze)
-  - [Wire Sequence](#wire-sequence)
-  - [Password](#password)
-
-- [Needy Modules](#needy-modules)
-  - [Knob](#knob)
-
-
-## Installing
+## :inbox_tray: Installing
 
 `npm i ktane-solver`
 
 
-## Terms
+## :closed_book: Terms
 
 - **Bomb** - the device which holds an amount of modules.
 - **Modules** - a device which contains a single, solvable puzzle which needs to be solved by the Defuser.
@@ -45,7 +22,7 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
 
 
 
-## The Bomb object
+## :bomb: The Bomb object
 
 Some modules require information about the bomb in order to solve.
 
@@ -82,13 +59,13 @@ This creates a bomb instance that has:
 
 ---
 
-## Modules
+## 🧩: Modules
 
 More information about the modules, as well as how to solve them, can be found at the [Bomb Defusal Manual](https://www.bombmanual.com/).
 
 
 
-### Wires
+### :scissors: Wires
 
 **Input**
 
@@ -121,7 +98,7 @@ Wires.solve(["red", "blue", "blue"], bomb)
 
 ---
 
-### Button
+### 🔴 Button
 
 **Input for part 1**
 
@@ -188,7 +165,7 @@ Button.solve("blue")
 
 ---
 
-### Keypad
+### 🔑 Keypad
 
 
 **Input**
@@ -219,7 +196,7 @@ Keypad.solve(["kitty", "curly h", "at", "backwards c"])
 
 ---
 
-### Simon Says
+### 💬 Simon Says
 
 **Input**
 
@@ -248,7 +225,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 
 ---
 
-### Who's On First
+### 🗒️ Who's On First
 
 **Input**
 
@@ -305,7 +282,7 @@ WhosOnFirst.solvePartTwo("right")
 
 ---
 
-### Memory
+### 🧠 Memory
 
 **Input**
 
@@ -380,7 +357,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 
 ---
 
-### Complicated Wires
+### 🐍 Complicated Wires
 
 **Input**
 
@@ -427,7 +404,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 
 ---
 
-### Maze
+### 🌽 Maze
 
 **Input**
 
@@ -472,7 +449,7 @@ Maze.solve([3, 5], [6, 4], [1, 5])
 
 ---
 
-### Wire Sequence
+### 🌈 Wire Sequence
 
 **Input**
 
@@ -522,7 +499,7 @@ Sequence.solve(["blue b", "red a", "blue b"], bomb)
 
 ---
 
-### Password
+### ⌨️ Password
 
 **Input**
 
@@ -556,7 +533,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 
 
 
-### Knob
+### 🎛️ Knob
 
 **Input**
 
