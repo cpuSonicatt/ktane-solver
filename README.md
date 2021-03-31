@@ -3,12 +3,12 @@
 A JavaScript library to solve the vanilla bomb modules from [Keep Talking and Nobody Explodes](https://keeptalkinggame.com/).
 
 
-## :inbox_tray: Installing
+## 📥 Installing
 
 `npm i ktane-solver`
 
 
-## :closed_book: Terms
+## 📖: Terms
 
 - **Bomb** - the device which holds an amount of modules.
 - **Modules** - a device which contains a single, solvable puzzle which needs to be solved by the Defuser.
@@ -22,7 +22,7 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
 
 
 
-## :bomb: The Bomb object
+## 💣 The Bomb object
 
 Some modules require information about the bomb in order to solve.
 
@@ -65,7 +65,7 @@ More information about the modules, as well as how to solve them, can be found a
 
 
 
-### :scissors: Wires
+### ✂️ Wires
 
 **Input**
 
@@ -329,7 +329,7 @@ Memory.solve([2,2,4,1,3], bomb)
 
  ---
 
-### Morse Code
+### 💡 Morse Code
 
 **Input**
 
