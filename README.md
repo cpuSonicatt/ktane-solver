@@ -303,7 +303,7 @@ WhosOnFirst.solvePartTwo("right")
 **Notes**
 
 - This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
-
+- This module will automatically call `reset_memory()` after the module is solved. You can call this method prematurely if required.
 
 
 **Example**
@@ -475,7 +475,7 @@ Maze.solve([3, 5], [6, 4], [1, 5])
 
 - The number on the left side of the module is not required to solve. 
 - This module requires knowledge of previous stages, which is held in the bomb object. Make sure to pass the same bomb object in for each stage.
-
+- This module will automatically call `reset_sequence()` after the module is solved. You can call this method prematurely if required.
 
 
 **Example**

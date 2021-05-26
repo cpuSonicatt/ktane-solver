@@ -7,7 +7,7 @@ class Knob {
                 return "UP"
 
             case "011001111101":
-            case "010101010001":
+            case "101010010001":
                 return "DOWN"
 
             case "000010100111":
