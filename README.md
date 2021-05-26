@@ -8,7 +8,7 @@ A JavaScript library to solve the vanilla bomb modules from [Keep Talking and No
 `npm i ktane-solver`
 
 
-## 📖: Terms
+## 📖 Terms
 
 - **Bomb** - the device which holds an amount of modules.
 - **Modules** - a device which contains a single, solvable puzzle which needs to be solved by the Defuser.
