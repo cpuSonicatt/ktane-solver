@@ -170,7 +170,7 @@ Button.solve("blue")
 
 **Input**
  - `symbols: Array<String>` - a String array with each symbol description
-    - A list of [each symbol, and their name, can be found here](./resources/moreinfo.md).
+    - A list of [each symbol, and their name, can be found here](./resources/README.md).
 
 **Output**
 
