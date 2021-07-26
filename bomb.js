@@ -1,6 +1,7 @@
 class Bomb {
     
     constructor(digit, vowel, car, frk, pport, batteries) {
+        // information regarding the bomb itself
         this.digit = digit
         this.vowel = vowel
         this.car = car
@@ -9,9 +10,11 @@ class Bomb {
         this.batteries = batteries
         this.strikes = 0
 
+        // information regarding the Memory module
         this.memoryHistory = []
         this.memoryStage = 0
 
+        // information regarding the Sequence module
         this.redCount = 0
         this.blueCount = 0
         this.blackCount = 0
