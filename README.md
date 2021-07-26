@@ -75,7 +75,7 @@ More information about the modules, as well as how to solve them, can be found a
 
 **Output**
 
-- The index of the wire that should be cut.
+- The index of the wire that should be cut based on the array passed, starting from 0.
 
 **Throws**
 
@@ -170,7 +170,7 @@ Button.solve("blue")
 
 **Input**
  - `symbols: Array<String>` - a String array with each symbol description
-    - A list of [each symbol, and their name, can be found here](./resources/moreinfo.md).
+    - A list of [each symbol, and their name, can be found here](./resources/README.md).
 
 **Output**
 
