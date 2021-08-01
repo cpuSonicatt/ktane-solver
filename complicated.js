@@ -12,6 +12,8 @@ class Complicated {
             let wireInformation = wire.split(" ")
 
             let colour
+
+            // mixed white colour not required to know to solve
             if (wireInformation.includes("red") && wireInformation.includes("blue")) {
                 colour = "red blue"
             } else if ((wireInformation.includes("red") && wireInformation.includes("white")) || wireInformation.includes("red")) {

@@ -1,4 +1,4 @@
-const choices = [
+const CHOICES = [
     "ae",
     "at",
     "b",
@@ -28,7 +28,7 @@ const choices = [
     "white star"
 ]
 
-const solutions = [
+const SOLUTIONS = [
     ["balloon", "at", "lambda", "lightning", "kitty", "curly h", "backwards c"],
     ["euro", "balloon", "backwards c", "pig tail", "white star", "curly h", "question"],
     ["copyright", "butt", "pig tail", "double k", "half three", "lambda", "white star"],
@@ -49,13 +49,13 @@ class Keypad {
         let checker = (arr, target) => target.every(v => arr.includes(v));
 
         for (let x = 0; x < 6; x++) {
-            if (checker(solutions[x], symbols)) {
-                return solutions[x].filter(x => symbols.includes(x))
+            if (checker(SOLUTIONS[x], symbols)) {
+                return SOLUTIONS[x].filter(x => symbols.includes(x))
             }
         }
 
         for (let x of symbols) {
-            if (!choices.includes(x)) throw "Unexpected symbol" + (symbols.length > 1 ? "s" : "") + ", got " + symbols.filter(x => !choices.includes(x))
+            if (!CHOICES.includes(x)) throw "Unexpected symbol" + (symbols.length > 1 ? "s" : "") + ", got " + symbols.filter(x => !CHOICES.includes(x))
             else if (symbols.length === 4) throw "No solution found for: " + symbols  
         }
 

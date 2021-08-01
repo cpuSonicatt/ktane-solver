@@ -1,4 +1,4 @@
-const morseList = [
+const MORSE_LIST = [
     "dot dash",
     "dash dot dot dot",
     "dash dot dash dot",
@@ -36,7 +36,7 @@ class Morse {
 
         let word = ""
         morse.forEach(letter => {
-            word += String.fromCharCode(morseList.indexOf(letter) + 97)
+            word += String.fromCharCode(MORSE_LIST.indexOf(letter) + 97)
         });
         
         switch (word) {

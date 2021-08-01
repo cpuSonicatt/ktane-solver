@@ -1,7 +1,6 @@
-import Bomb from "./bomb";
-
 class Button {
 
+    // stage 1
     static solve(input, bomb) {
         input = input.toLowerCase()
 
@@ -29,6 +28,7 @@ class Button {
 
     }
 
+    // stage 2 if stage 1 returns "HOLD"
     static solve(input) {
         input = input.toLowerCase()
         if (input === "blue") {

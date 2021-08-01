@@ -1,4 +1,4 @@
-const wordsMap = {
+const WORDS_MAP = {
     "ready" : "YES, OKAY, WHAT, MIDDLE, LEFT, PRESS, RIGHT, BLANK, READY",
     "first" : "LEFT, OKAY, YES, MIDDLE, NO, RIGHT, NOTHING, UHHH, WAIT, READY, BLANK, WHAT, PRESS, FIRST",
     "no" : "BLANK, UHHH, WAIT, FIRST, WHAT, READY, RIGHT, YES, NOTHING, LEFT, PRESS, OKAY, NO",
@@ -63,7 +63,7 @@ class WhosOnFirst {
 
     static solvePartTwo(word) {
         word = word.toLowerCase()
-        let solution = wordsMap[word]
+        let solution = WORDS_MAP[word]
         if (solution) {
             return solution
         } else {

@@ -1,8 +1,8 @@
-const redRule = ["c", "b", "a", "ac", "b", "ac", "abc", "ab", "b"]
+const RED_RULE = ["c", "b", "a", "ac", "b", "ac", "abc", "ab", "b"]
 
-const blueRule = ["b", "ac", "b", "a", "b", "bc", "c", "ac", "a"]
+const BLUE_RULE = ["b", "ac", "b", "a", "b", "bc", "c", "ac", "a"]
 
-const blackRule = ["abc", "ac", "b", "ac", "b", "bc", "ab", "c", "c"]
+const BLACK_RULE = ["abc", "ac", "b", "ac", "b", "bc", "ab", "c", "c"]
 
 class Sequence {
 
@@ -28,13 +28,13 @@ class Sequence {
             let rule
             if (wireInfo[0].includes("red")) {
                 index = bomb.redCount++
-                rule = redRule
+                rule = RED_RULE
             } else if (wireInfo[0].includes("blue")) {
                 index = bomb.blueCount++
-                rule = blueRule
+                rule = BLUE_RULE
             } else if (wireInfo[0].includes("black")) {
                 index = bomb.blackCount++
-                rule = blackRule
+                rule = BLACK_RULE
             }
 
             for (let letter of rule[index].split("")) {

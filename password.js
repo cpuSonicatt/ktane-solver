@@ -1,4 +1,4 @@
-const passwords = [
+const PASSWORDS = [
     "ABOUT", "AFTER", "AGAIN", "BELOW",
     "COULD", "EVERY", "FIRST", "FOUND",
     "GREAT", "HOUSE", "LARGE", "LEARN",
@@ -18,17 +18,17 @@ class Password {
 
         for (let row of letters) {
             let rowArr = row.split("")
-            passwords = passwords.filter(word => {
+            PASSWORDS = PASSWORDS.filter(word => {
                 for (let x = 0; x <= 5; x++)
                     return rowArr[x] === word.charAt(index)
                 })
             index++
-            if (passwords.length == 1) {
-                return passwords[0]
+            if (PASSWORDS.length == 1) {
+                return PASSWORDS[0]
             }
         }
 
-        throw "Expected 1 result, got " + passwords
+        throw "Expected 1 result, got " + PASSWORDS
     }
 }
 

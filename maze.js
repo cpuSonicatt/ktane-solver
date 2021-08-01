@@ -1,4 +1,4 @@
-const mazeA = [
+const MAZE_A = [
     [1,1,1,1,1,0,1,1,1,1,1],
     [1,0,0,0,1,0,1,0,0,0,0],
     [1,0,1,1,1,0,1,1,1,1,1],
@@ -12,7 +12,7 @@ const mazeA = [
     [1,1,1,0,1,1,1,0,1,1,1]
 ]
 
-const mazeB = [
+const MAZE__B = [
     [1,1,1,1,1,0,1,1,1,1,1],
     [0,0,1,0,0,0,1,0,1,0,0],
     [1,1,1,0,1,1,1,0,1,1,1],
@@ -26,7 +26,7 @@ const mazeB = [
     [1,0,1,1,1,0,1,1,1,1,1]
 ]
 
-const mazeC = [
+const MAZE_C = [
     [1,1,1,1,1,0,1,0,1,1,1],
     [1,0,0,0,1,0,1,0,1,0,1],
     [1,0,1,0,1,0,1,1,1,0,1],
@@ -40,7 +40,7 @@ const mazeC = [
     [1,1,1,1,1,1,1,0,1,1,1]
 ]
 
-const mazeD = [
+const MAZE_D = [
     [1,1,1,0,1,1,1,1,1,1,1],
     [1,0,1,0,0,0,0,0,0,0,1],
     [1,0,1,0,1,1,1,1,1,1,1],
@@ -54,7 +54,7 @@ const mazeD = [
     [1,1,1,1,1,0,1,1,1,0,1]
 ]
 
-const mazeE = [
+const MAZE_E = [
     [1,1,1,1,1,1,1,1,1,1,1],
     [0,0,0,0,0,0,0,0,1,0,1],
     [1,1,1,1,1,1,1,1,1,0,1],
@@ -68,7 +68,7 @@ const mazeE = [
     [1,0,1,1,1,1,1,1,1,1,1]
 ]
 
-const mazeF = [
+const MAZE_F = [
     [1,0,1,1,1,0,1,1,1,1,1],
     [1,0,1,0,1,0,0,0,1,0,1],
     [1,0,1,0,1,0,1,1,1,0,1],
@@ -82,7 +82,7 @@ const mazeF = [
     [1,1,1,1,1,1,1,0,1,1,1]
 ]
 
-const mazeG = [
+const MAZE_G = [
     [1,1,1,1,1,1,1,0,1,1,1],
     [1,0,0,0,0,0,1,0,1,0,1],
     [1,0,1,1,1,0,1,1,1,0,1],
@@ -96,7 +96,7 @@ const mazeG = [
     [1,1,1,1,1,1,1,1,1,1,1]
 ]
 
-const mazeH = [
+const MAZE_H = [
     [1,0,1,1,1,1,1,0,1,1,1],
     [1,0,1,0,0,0,1,0,1,0,1],
     [1,1,1,1,1,0,1,1,1,0,1],
@@ -110,7 +110,7 @@ const mazeH = [
     [1,1,1,1,1,1,1,1,1,1,1]
 ]
 
-const mazeI = [
+const MAZE_I = [
     [1,0,1,1,1,1,1,1,1,1,1],
     [1,0,1,0,0,0,0,0,1,0,1],
     [1,0,1,0,1,1,1,0,1,0,1],
@@ -175,31 +175,31 @@ function _choose_maze(ind) {
     switch (ind.join("")) {
         case "12":
         case "63":
-            return mazeA
+            return MAZE_A
         case "52":
         case "24":
-            return mazeB
+            return MAZE_B
         case "44":
         case "64":
-            return mazeC
+            return MAZE_C
         case "11":
         case "14":
-            return mazeD
+            return MAZE_D
         case "46":
         case "53":
-            return mazeE
+            return MAZE_E
         case "51":
         case "35":
-            return mazeF
+            return MAZE_F
         case "21":
         case "26":
-            return mazeG
+            return MAZE_G
         case "41":
         case "24":
-            return mazeH
+            return MAZE_H
         case "15":
         case "32":
-            return mazeI
+            return MAZE_I
 
         default:
             throw "Unexpected indicator position, got " + ind
