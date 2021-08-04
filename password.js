@@ -11,8 +11,7 @@ const PASSWORDS_LIST = [
     "OTHER",
     "PLACE", "PLANT", "POINT",
     "RIGHT",
-    "SMALL", "SOUND",
-    "SPELL", "STILL", "STUDY",
+    "SMALL", "SOUND", "SPELL", "STILL", "STUDY",
     "THEIR", "THERE", "THESE", "THING", "THINK", "THREE",
     "WATER", "WHERE", "WHICH", "WORLD", "WOULD", "WRITE"
 ]
