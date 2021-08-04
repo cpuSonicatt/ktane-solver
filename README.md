@@ -553,6 +553,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 
 **Notes**
 
+- Only the left-hand side of the lights are required to solve this module.
 - The order should be left-to-right, top-to-bottom.
 
 
@@ -562,7 +563,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 ```js
 import Knob from "ktane-solver/knob"
 
-Knob.solve("101100111010")
+Knob.solve("101111")
 
 >> RIGHT
 ```
