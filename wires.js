@@ -33,7 +33,7 @@ class Wires {
                 if (wires[4] === "black" && isOdd) {
                     return 3
                 } else if (wires.count("red") == 1 && wires.count("yellow") > 1) {
-                    return
+                    return 0
                 } else if (!wires.includes("black")) {
                     return 1
                 } else {
