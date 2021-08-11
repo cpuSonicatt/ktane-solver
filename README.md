@@ -143,7 +143,7 @@ import Wires from "ktane-solver/button"
 
 let bomb = new Bomb(2, true, false, false, true, 1)
 
-Button.solve("red detonate", bomb)
+Button.solveStage1("red detonate", bomb)
 
 >> "HOLD"
 ```
@@ -158,7 +158,7 @@ import Wires from "ktane-solver/button"
 
 let bomb = new Bomb(2, true, false, false, true, 1)
 
-Button.solve("blue")
+Button.solveStage2("blue")
 
 >> 4
 ```

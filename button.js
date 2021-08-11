@@ -1,7 +1,7 @@
 class Button {
 
     // stage 1
-    static solve(input, bomb) {
+    static solveStage1(input, bomb) {
         input = input.toLowerCase()
 
         let [colour, text] = input.split(" ")
@@ -29,7 +29,7 @@ class Button {
     }
 
     // stage 2 if stage 1 returns "HOLD"
-    static solve(input) {
+    static solveStage2(input) {
         input = input.toLowerCase()
         if (input === "blue") {
             return "4"
