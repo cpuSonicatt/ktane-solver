@@ -189,9 +189,9 @@ Button.solveStage2("blue")
 ```javascript
 import Keypad from "ktane-solver/keypad"
 
-Keypad.solve(["kitty", "curly h", "at", "backwards c"])
+Keypad.solve(["kitty", "curly h", "ash", "reverse c"])
 
->> ["at", "kitty", "curly h", "backwards c"]
+>> ["at", "kitty", "curly h", "reverse c"]
 ```
 
 ---
