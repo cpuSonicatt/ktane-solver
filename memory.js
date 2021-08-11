@@ -8,7 +8,7 @@ class Memory {
             throw "Expected array length of 5, got " + numbers.length
         }
 
-        if (!numbers.includes([1,2,3,4])) {
+        if (!numbers.every(x => [1,2,3,4].includes(x))) {
             throw "Unexpected number, got " + numbers.filter(x => x > 4)
         }
 
