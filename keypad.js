@@ -1,8 +1,7 @@
 const CHOICES = [
-    "ae",
+    "ash",
     "at",
     "b",
-    "backwards c",
     "balloon",
     "black star",
     "butt",
@@ -22,6 +21,7 @@ const CHOICES = [
     "paragraph",
     "pig tail",
     "question",
+    "reverse c",
     "six",
     "smiley",
     "stitch",
@@ -29,12 +29,12 @@ const CHOICES = [
 ]
 
 const SOLUTIONS = [
-    ["balloon", "at", "lambda", "lightning", "kitty", "curly h", "backwards c"],
-    ["euro", "balloon", "backwards c", "pig tail", "white star", "curly h", "question"],
+    ["balloon", "at", "lambda", "lightning", "kitty", "curly h", "reverse c"],
+    ["euro", "balloon", "reverse c", "pig tail", "white star", "curly h", "question"],
     ["copyright", "butt", "pig tail", "double k", "half three", "lambda", "white star"],
     ["six", "paragraph", "b", "kitty", "double k", "question", "smiley"],
     ["fork", "smiley", "b", "c with dot", "paragraph", "dragon", "black star"],
-    ["six", "euro", "stitch", "ae", "fork", "letter n", "omega"]
+    ["six", "euro", "stitch", "ash", "fork", "letter n", "omega"]
 ]
 
 class Keypad {

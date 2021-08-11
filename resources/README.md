@@ -2,17 +2,16 @@
 
 | Symbol              | Name        |
 | ------------------- | ----------- |
-| ![](ae.png)         | ae          |
+| ![](ash.png)        | ash         |
 | ![](at.png)         | at          |
 | ![](b.png)          | b           |
-| ![](backwardsc.png) | backwards c |
 | ![](balloon.png)    | balloon     |
 | ![](blackstar.png)  | black star  |
 | ![](butt.png)       | butt        |
 | ![](cwithdot.png)   | c with dot  |
 | ![](copyright.png)  | copyright   |
 | ![](curlyh.png)     | curly h     |
-| ![](doublek.png)    | double k   |
+| ![](doublek.png)    | double k    |
 | ![](dragon.png)     | dragon      |
 | ![](euro.png)       | euro        |
 | ![](fork.png)       | fork        |
@@ -25,6 +24,7 @@
 | ![](paragraph.png)  | paragraph   |
 | ![](pigtail.png)    | pig tail    |
 | ![](question.png)   | question    |
+| ![](reversec.png)   | reverse c   |
 | ![](six.png)        | six         |
 | ![](smiley.png)     | smiley      |
 | ![](stitch.png)     | stitch      |
