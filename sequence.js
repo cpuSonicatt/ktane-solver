@@ -40,7 +40,7 @@ class Sequence {
             solution.push(rule[index].includes(wireInfo[1]) ? true : false)
         });
 
-        if (bomb.stage == 4) {
+        if (bomb.sequenceStage == 4) {
             // reset
             bomb.reset_sequence()
         }
