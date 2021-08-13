@@ -37,9 +37,7 @@ class Sequence {
                 rule = BLACK_RULE
             }
 
-            for (let letter of rule[index].split("")) {
-                solution.push(wireInfo[1].includes(letter) ? true : false)
-            }
+            solution.push(rule[index].includes(wireInfo[1]) ? true : false)
         });
 
         if (bomb.stage == 4) {
