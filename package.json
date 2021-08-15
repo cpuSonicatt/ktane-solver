@@ -1,6 +1,6 @@
 {
   "name": "ktane-solver",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "A library made to solve KTaNE modules",
   "main": "index.js",
   "type": "module",
