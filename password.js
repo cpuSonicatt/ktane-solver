@@ -41,5 +41,3 @@ class Password {
 }
 
 export default Password
-
-console.log(Password.solve(["tghus", "", "", "", "tnehr"]))
