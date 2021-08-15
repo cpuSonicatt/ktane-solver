@@ -399,7 +399,7 @@ let bomb = new Bomb(2, true, false, false, true, 1)
 
 Complicated.solve(["white star", "red star", "red star", "blue star", "light blue star", "light red white star"], bomb)
 
->> [ true, true, true, false, false, true ]
+>> [ true, true, true, false, true, false ]
 ```
 
 ---
