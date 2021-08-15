@@ -18,23 +18,19 @@ const PASSWORDS_LIST = [
 
 class Password { 
 
-    static solve(letters) {
-        letters = letters.map(v => v.toLowerCase())
+    static solve(columns) {
+        columns = columns.map(v => v.toLowerCase())
+
+        let passwords = PASSWORDS_LIST
         let index = 0
 
-        for (let row of letters) {
-            let rowArr = row.split("")
-            let passwords = PASSWORDS_LIST.filter(word => {
-                for (let x = 0; x <= 5; x++)
-                    return rowArr[x] === word.charAt(index)
-                })
+        for (let column of columns) {
+            passwords = passwords.filter((word) => {
+                return column.includes(word.charAt(index).toLowerCase())
+            })
             index++
-            if (passwords.length == 1) {
-                return passwords[0]
-            }
         }
-
-        throw "Expected 1 result, got " + passwords
+        return passwords
     }
 }
 
