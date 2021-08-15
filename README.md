@@ -503,26 +503,37 @@ Sequence.solve(["blue b", "red a", "blue b"], bomb)
 
 **Input**
 
-- `letters: Array<String>` - a String array describing each letter in each cycle.
+- `columns: Array<String>` - a String array describing each letter in each column.
 
 **Output**
 
-- The correct password.
+- A list of the possible passwords
 
 **Throws**
 
-- If more than 1 possible password is found.
+- If the passed array isn't exactly 5 elements long.
+
+**Notes**
+
+- Partial inputs (empty strings) are accepted.
 
 
-
-**Example**
+**Examples**
 
 ```js
 import Password from "ktane-solver/password"
 
 Password.solve(["kqtfhy", "hwjfus", "rinybk", "ynukj", "ipkxvc"])
 
->> "THINK"
+>> ["THINK"]
+```
+
+```js
+import Password from "ktane-solver/password"
+
+Password.solve(["tghus", "", "", "", "tnehr"])
+
+>> [ "GREAT", "HOUSE", "THEIR", "THERE", "THESE", "THREE" ]
 ```
 
 ---

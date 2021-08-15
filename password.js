@@ -21,13 +21,19 @@ class Password {
     static solve(columns) {
         columns = columns.map(v => v.toLowerCase())
 
+        if (columns.length !== 5) {
+            throw "Expected columns length 5, got " + columns.length
+        }
+
         let passwords = PASSWORDS_LIST
         let index = 0
 
         for (let column of columns) {
-            passwords = passwords.filter((word) => {
-                return column.includes(word.charAt(index).toLowerCase())
-            })
+            if (!(column === "")) {
+                passwords = passwords.filter((word) => {
+                    return column.includes(word.charAt(index).toLowerCase())
+                })
+            }
             index++
         }
         return passwords
@@ -35,3 +41,5 @@ class Password {
 }
 
 export default Password
+
+console.log(Password.solve(["tghus", "", "", "", "tnehr"]))
