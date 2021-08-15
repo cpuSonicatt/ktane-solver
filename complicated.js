@@ -11,7 +11,6 @@ class Complicated {
         let p = bomb.pport
 
         wires.forEach(wire => {
-            console.log(wire)
             let colour
 
             // mixed white colour not required to know to solve
@@ -86,5 +85,3 @@ class Complicated {
 }
 
 export default Complicated
-
-console.log(Complicated.solve(["white star"], new Bomb(2, true, false, false, true, 1)))
