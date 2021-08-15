@@ -1,3 +1,5 @@
+import Bomb from "./bomb.js"
+
 class Complicated {
 
     static solve(wires, bomb) {
@@ -9,23 +11,24 @@ class Complicated {
         let p = bomb.pport
 
         wires.forEach(wire => {
-            let wireInformation = wire.split(" ")
-
+            console.log(wire)
             let colour
 
             // mixed white colour not required to know to solve
-            if (wireInformation.includes("red") && wireInformation.includes("blue")) {
+            if (wire.includes("red") && wire.includes("blue")) {
                 colour = "red blue"
-            } else if ((wireInformation.includes("red") && wireInformation.includes("white")) || wireInformation.includes("red")) {
+            } else if ((wire.includes("red") && wire.includes("white")) || wire.includes("red")) {
                 colour = "red"
-            } else if ((wireInformation.includes("blue") && wireInformation.includes("white")) || wireInformation.includes("blue")) {
+            } else if ((wire.includes("blue") && wire.includes("white")) || wire.includes("blue")) {
                 colour = "blue"
+            } else if (wire.includes("white")) {
+                colour = "white"
             } else {
-                throw "Unexpected wire colour, got " + wireInformation
+                throw "Unexpected wire colour, got " + wire
             }
 
-            let light = wireInformation.includes("light")
-            let star = wireInformation.includes("star")
+            let light = wire.includes("light")
+            let star = wire.includes("star")
 
             switch (colour) {
                 case "white":
@@ -83,3 +86,5 @@ class Complicated {
 }
 
 export default Complicated
+
+console.log(Complicated.solve(["white star"], new Bomb(2, true, false, false, true, 1)))
