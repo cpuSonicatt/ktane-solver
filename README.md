@@ -75,7 +75,7 @@ More information about the modules, as well as how to solve them, can be found a
 
 **Output**
 
-- The index of the wire that should be cut based on the array passed, starting from 0.
+- `int` - The index of the wire that should be cut based on the array passed, starting from 0.
 
 **Throws**
 
@@ -109,7 +109,7 @@ Wires.solve(["red", "blue", "blue"], bomb)
 
 **Output for part 1**
 
-- What the Defuser should with the button after pressing it.
+- `String` - What the Defuser should with the button after pressing it.
   - `"HOLD"` - the button should be pressed and held.
   - `"RELEASE"` - the button should be pressed and immediately released.
 
@@ -126,7 +126,7 @@ Wires.solve(["red", "blue", "blue"], bomb)
 
 **Output for part 2**
 
-- When the button should be released.
+- `String` When the button should be released.
   - `"1"` - the button should be released when the countdown timer has a 1 in any position.
   - `"4"` - the button should be released when the countdown timer has a 4 in any position.
   - `"5"` - the button should be released when the countdown timer has a 5 in any position.
@@ -143,7 +143,7 @@ import Wires from "ktane-solver/button"
 
 let bomb = new Bomb(2, true, false, false, true, 1)
 
-Button.solveStage1("red detonate", bomb)
+Button.solvePartOne("red detonate", bomb)
 
 >> "HOLD"
 ```
@@ -158,7 +158,7 @@ import Wires from "ktane-solver/button"
 
 let bomb = new Bomb(2, true, false, false, true, 1)
 
-Button.solveStage2("blue")
+Button.solvePartTwo("blue")
 
 >> 4
 ```
@@ -174,7 +174,7 @@ Button.solveStage2("blue")
 
 **Output**
 
-- The order at which the symbols should be pressed.
+- `Array<String>` - The order at which the symbols should be pressed.
 
 **Throws**
 
@@ -206,7 +206,7 @@ Keypad.solve(["kitty", "curly h", "at", "reverse c"])
 
 **Output**
 
-- The colours that the Defuser should press, in order.
+- `Array<String>` - The colours that the Defuser should press, in order.
 
 
 
@@ -233,7 +233,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 
 **Output for part 1**
 
-- The position of the word on the module, that should be the input for part 2.
+- `String` - The position of the word on the module, that should be the input for part 2.
   - Possible positions: `TL` (top left), `TR` (top right), `ML` (middle left), `MR` (middle right), `BL` (bottom left), `BR` (bottom right)
 
 **Throws**
@@ -248,7 +248,7 @@ SimonSays.solve(["red", "red", "blue"], bomb)
 
 **Output for part 2**
 
-- A list of possible words, in order. The first word that both appears on the list, and on the module, should be pressed by the Defuser.
+- `String` - A list of possible words, in order. The first word that both appears on the list, and on the module, should be pressed by the Defuser.
 
 **Throws**
 
@@ -291,7 +291,7 @@ WhosOnFirst.solvePartTwo("right")
 
 **Output**
 
-- The label of the button that the Defuser should press.
+- `int` - The label of the button that the Defuser should press.
 
 **Throws**
 
@@ -337,7 +337,8 @@ Memory.solve([2,2,4,1,3], bomb)
 
 **Output**
 
-- The value of the frequency that the Defuser should press.
+- `Array<String>` - A list of the possible words, given the input;
+- `String` - OR the frequency that should be selected.
 
 **Throws**
 
@@ -367,7 +368,7 @@ Morse.solve(["dot dot dot", "dot dot dot dot", "dot", "dot dash dot dot", "dot d
 
 **Output**
 
-- A list of Booleans describing if each wire should be cut.
+- `Array<boolean>` - A list of Booleans describing if each wire should be cut.
   - `true` - cut the wire.
   - `false` - don't cut the wire.
 
@@ -414,7 +415,7 @@ Complicated.solve(["white star", "red star", "red star", "blue star", "light blu
 
 **Output**
 
-- A list of directions that the Defuser should input into the module.
+- `Array<String>` - A list of directions that the Defuser should input into the module.
   - Possible directions: `UP`, `DOWN`, `LEFT`, `RIGHT`
 
 **Throws**
@@ -460,7 +461,7 @@ Maze.solve([3, 5], [6, 4], [1, 5])
 
 **Output**
 
-- A list of Booleans describing if each wire should be cut.
+- `Array<boolean>` - A list of Booleans describing if each wire should be cut.
   - `true` - cut the wire.
   - `false` - don't cut the wire.
 
@@ -507,16 +508,16 @@ Sequence.solve(["blue b", "red a", "blue b"], bomb)
 
 **Output**
 
-- A list of the possible passwords
+- `Array<String>` - A list of the possible passwords
 
 **Throws**
 
-- If the passed array isn't exactly 5 elements long.
+- If the passed array isn't exactly 5 elements long (pad your input with empty strings, if needs be).
 
 **Notes**
 
 - Partial inputs (empty strings) are accepted.
-
+- Check if the returned array's length is 1 to determine the password.
 
 **Examples**
 
@@ -554,7 +555,7 @@ Only one module, Knob, requires any logic. Venting Gas, and Capacitor Discharge 
 
 **Output**
 
-- The direction that the knob should be pointed.
+- `String` - The direction that the knob should be pointed.
 
 **Throws**
 
